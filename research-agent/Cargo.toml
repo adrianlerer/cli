@@ -1,0 +1,58 @@
+[package]
+name = "research-agent"
+version = "0.1.0"
+edition = "2021"
+authors = ["Research Agent Team"]
+description = "Autonomous research agent for academic corpus analysis"
+license = "Apache-2.0"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.41", features = ["full"] }
+async-trait = "0.1"
+
+# CLI
+clap = { version = "4.5", features = ["derive", "env"] }
+colored = "2.1"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# HTTP client
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+
+# Text processing
+regex = "1.11"
+unicode-segmentation = "1.12"
+
+# PDF parsing
+lopdf = "0.34"
+pdf-extract = "0.7"
+
+# Storage
+sqlx = { version = "0.8", features = ["sqlite", "runtime-tokio-rustls"], optional = true }
+
+# Utilities
+anyhow = "1.0"
+thiserror = "2.0"
+uuid = { version = "1.11", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Cache
+sled = "0.34"
+
+[dev-dependencies]
+tempfile = "3.13"
+mockito = "1.5"
+
+[features]
+default = ["persistent-storage"]
+persistent-storage = ["sqlx"]
+
+[[bin]]
+name = "research-agent"
+path = "src/main.rs"
