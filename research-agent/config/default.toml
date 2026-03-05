@@ -1,0 +1,58 @@
+# Research Agent Configuration
+
+[search]
+# Maximum number of results to return
+max_results = 50
+
+# Similarity threshold for semantic search (0.0-1.0)
+similarity_threshold = 0.7
+
+# Use semantic search (requires embeddings)
+use_semantic_search = false
+
+[analysis]
+# Minimum confidence for argument extraction (0.0-1.0)
+min_argument_confidence = 0.6
+
+# Extract citations from documents
+extract_citations = true
+
+# Validate claims against corpus
+validate_claims = true
+
+[synthesis]
+# Maximum sources to cite per claim
+max_sources_per_claim = 5
+
+# Require validation from multiple sources
+require_multi_source_validation = true
+
+[output]
+# Default output format (markdown, google_docs, html)
+default_format = "markdown"
+
+# Include bibliography
+include_bibliography = true
+
+# Citation style (APA, MLA, Chicago, IEEE)
+citation_style = "APA"
+
+[cache]
+# Enable caching
+enabled = true
+
+# Cache directory (relative to research-agent/)
+directory = ".cache"
+
+# Cache TTL in seconds (24 hours)
+ttl = 86400
+
+[logging]
+# Log level (trace, debug, info, warn, error)
+level = "info"
+
+# Log to file
+log_to_file = false
+
+# Log file path
+log_file = "research-agent.log"

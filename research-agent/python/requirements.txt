@@ -1,0 +1,16 @@
+# Research Agent Python Dependencies
+
+# NLP and text processing
+numpy>=1.24.0
+nltk>=3.8.0
+
+# Optional: Semantic search (embeddings)
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.4
+
+# Optional: Advanced NLP
+spacy>=3.7.0
+
+# Utilities
+requests>=2.31.0
+python-dotenv>=1.0.0

@@ -1,0 +1,27 @@
+{
+  "name": "research-agent-ts",
+  "version": "0.1.0",
+  "description": "Research Agent TypeScript Implementation",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "search": "tsx src/cli.ts search",
+    "analyze": "tsx src/cli.ts analyze"
+  },
+  "keywords": ["research", "ai", "agent", "academic"],
+  "author": "Research Agent Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0"
+  }
+}
